@@ -1,0 +1,132 @@
+sehir=input("Which city do you live in NL?")
+print("""
+                                **
+                              **  **
+                            **      **
+                          **          **
+                        **              **
+                      **                  **
+                *******                   *******
+                *******                   *******
+                     **   ****       **** **
+                     **   *  *       *  * **
+                     **   ****       **** **
+                     **                   **
+                     **                   **
+                     **                   **
+                     **                   **
+                     **                   **
+                     **   *************   **
+                          """,sehir,"""
+                          ""","-"*len(sehir),"""
+                     **  *******          **
+                     **  *     *          **
+                     **  *     *          **
+                     **  *   * *          **
+                     **  *     *          **
+                     ***********************
+                     
+                     """)
+                    
+---------------------------------------------------------
+Ödev2="Kullanıcıdan input ile km cinsinden mesafe bilgisi alıp, bu bilgiyi mile dönüştürün ve sonucu ekrana printleyin."
+print(Ödev2,"""Kolay Gelsin:)
+""",sep="")
+print("""Merhaba!
+""","""Haydi gelin sizinle kaç km yürüdüğünüzü mil cinsinden bulalım.
+""","""Lütfen ne kadar yürüdüğünüzü yazınız.""",sep="")
+uzaklık=int(input("Dünden bugüne kaç km yürümüşsünüzdür?"))
+mile=int(621.371192*float(uzaklık))
+print(mile,"mil katetmişssiniz. Aynen böyle devam,tığ gibi olacağız!")
+--------------------------------------------------------
+print('''Oğrenci not ortalama programi
+
+Icerik:
+Kullanicidan input ile ad-soyad, vize, final ve ders takip bilgilerini alip bu degerleri
+yuzdelik oranlarina gore hesaplayin ve yil sonu notunu cikarin.
+
+Yontem:
+-Sinav puanlari ve ders takip puani 0-100 arasidir.
+-Bir öğrencinin gitmesi gereken toplam ders sayısı 20’dir. Kaçırılan
+her ders için 5 puan kırılacaktır. (Orn: 3 ders kaciran bir ogrencinin ders takip puani: 100-(3x5)=85 )
+Oranlar :
+- Vize Notu ( 30%)
+- Final Notu (50%)
+- Ders takip (20%)
+
+Sonuc:
+    0.    Output olarak ogrencinin yil sonu puanini ekrana pritleyin.
+    0.    Ogrenci ad-soyad, vize-final-ders takip bilgilerini ve hesapladiginiz
+    yil sonu puanini “ogrenciNotHesaplama” isimli bir dosyaya kaydedin.
+    ''')
+
+isim=input("İsminiz:")
+soyisim=input("Soyisminiz:")
+vize_puanı=input("Vize sınavı puanınız:")
+final_puanı=input("Final sınavı puanınız:")
+kaçırılan_ders_sayısı=int(input("Devamsızlık sayınız:"))
+yil_sonu_notu=int(vize_puanı)*0.3+int(final_puanı)*0.50+int(100-(kaçırılan_ders_sayısı*5))*0.20
+print(yil_sonu_notu)
+dosya=open("ogrenciNotHesaplama.txt","w")
+print("""
+            Öğrencilerimizin bu yılda gösterdikleri emekler için
+                      ÇOOOOKKK Teşekkürr Ederizz,
+                        İyi tatiller Çoçuklar!!
+"""
+"İsmi:",isim,
+"Soyismi:",soyisim,
+"Vize puanı:",vize_puanı,
+"Final puanı:",final_puanı,
+"Devamsızlık:",kaçırılan_ders_sayısı,
+"Puanı:",yil_sonu_notu,sep="\n",file=dosya)
+dosya.close()
+---------------------------------------------------------------
+anapara=float(input("Çekmek istediğiniz miktar:"))
+faizsuresi=float(input("Çektiğiniz miktarı kac yilda odemek istersiniz?"))
+faizorani=float(input("Ne kadar faiz oranıyla kredi alimi yapmak istiyorsunuz?"))
+faiz_hesaplama=float(anapara*faizsuresi*faizorani)*0.01
+print("Çektiğiniz miktara",faiz_hesaplama,"TL faiz yansıyacaktır.")
+toplam_para=anapara+faiz_hesaplama
+aylik_faiz_tutari=faiz_hesaplama/12
+gunluk_faiz_tutari=aylik_faiz_tutari/30
+dosya=open("faizHesaplama.txt","w")
+print("""
+                Sayın müşterimiz, bankamızı tercih ettiğinizden dolayı sizlere
+                        çok teşekkür eder ve aynı zamanda sürprimizi
+                            açıklamak isteriz! Sürpriziniz....
+    Sizi 100K satırlık kod yazma kabiliyeti kazandıracak Pycoders-Pyhton kursu hediye ettiğimiz olsun.
+""",
+"Toplam Faiz Tutarı:",faiz_hesaplama,
+"Aylık Ortalama Faiz Tutarı:",aylik_faiz_tutari,
+"Günlük Faiz Tutarı:",gunluk_faiz_tutari,
+"Toplam Para:",toplam_para,sep="\n",file=dosya)
+dosya.close()
+----------------------------------------------------
+print("Aylık masraflarınızı hesaplamamız için aşağıdaki bilgileri girmeniz gerekmektedir.")
+mutfak_masrafı=float(input("Aylık mutfak masrafınız:"))
+egitim_masrafı=float(input("Aylık eğitim masrafınız:"))
+giyim_masrafı=float(input("Aylık giyim masrafınız:"))
+ulasım_masrafı=float(input("Aylık ulaşım masrafınız:"))
+aylik_gelir=float(input("Aylık kazancınız:"))
+aylik_toplam_masraf=float(mutfak_masrafı+egitim_masrafı+giyim_masrafı+ulasım_masrafı)
+masraf_aylik_gelir_oranı=float(aylik_toplam_masraf/aylik_gelir)
+dosya=open("aylikmasraf.txt","w")
+print("""Merhabalar!
+""","""Toplam masraflarınız ve bunların aylık gelirine oranlarını aşağıda bulabilirsiniz""",
+"Toplam Masraf:",aylik_toplam_masraf,
+"Aylık Masraf Gelir Oranı:",masraf_aylik_gelir_oranı,sep="\n",file=dosya)
+dosya.close()
+-------------------------------------------------------
+print("""Merhabalar
+""","""*Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki
+"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.*
+""","""yazısını 3 farklı şekilde printleyiniz.
+""",sep="")
+
+print("""Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki
+"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.""")
+
+print("Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki  \"Universiteit Van Amsterdam\" okulundan  1982’de mezun olmuştur.")
+
+print('Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki  "Universiteit Van Amsterdam" okulundan  1982\'de mezun olmuştur.')
+
